@@ -22,12 +22,14 @@ function App() {
         </h2>
 
         <form className="space-y-6 w-90">
+          <FloatLabel>
             <InputField
               id="username"
               label="Kullanıcı Adı"
               type="text"
               roworcol="col"
             />   
+          </FloatLabel>
           <InputField
               id="password"
               label="Şifre"
