@@ -1,12 +1,10 @@
 import { useState } from 'react';
-import RegisterForm from './forms/RegisterForm';
-import LoginForm from './forms/LoginForm';
+import AuthPage from './page/authPage.jsx';
 
 function App() {
   return (
     <div className="min-h-screen flex justify-center items-center bg-black shadow-lg shadow-white/10 gap-20">
-   <RegisterForm />
-   <LoginForm />
+      <AuthPage />
    </div>
   );
 }

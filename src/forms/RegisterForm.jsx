@@ -4,9 +4,8 @@ import InputField from '../components/inputField.jsx';
 import PasswordField from '../components/passwordFiled.jsx';
 import CalendarField from '../components/calendarField.jsx';
 import GenderSelect from '../components/genderField.jsx';
-import RememberMe from '../components/rememberField.jsx';
 
-function RegisterForm() {
+function RegisterForm({ onSwitchToLogin }) {
   const [form, setForm] = useState({
     username: '' , password: '' , email: '' , birth_date: null , gender: '' , remember: false
   });
@@ -26,7 +25,9 @@ function RegisterForm() {
             <GenderSelect value={form.gender} onChange={(val) => handleChange('gender', val)} labelone="Erkek" labeltwo="Kadın" />
             <Button label="Kaydol" className="w-full " severity="success"/>
              <p className="text-white text-sm text-center"> 
-              Hesabınız var mı?{' '} <a href="#" className="hover:underline">Giriş Yap</a></p>
+              Hesabınız var mı?{' '} <button type="button" onClick={onSwitchToLogin} style={{all: 'unset', color: 'gray', cursor: 'pointer', textDecoration: 'underline'}}>
+          Giriş Yap
+        </button></p>
         </form>
       </div>
   );

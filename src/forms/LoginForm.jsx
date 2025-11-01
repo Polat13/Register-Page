@@ -4,7 +4,7 @@ import PasswordField from '../components/passwordFiled.jsx';
 import RememberMe from '../components/rememberField.jsx';
 import { Button } from 'primereact/button';
 
-function LoginForm() {
+function LoginForm({ onSwitchToRegister }) {
      const [form, setForm] = useState({
     username: '' , password: '' , remember: false
   });
@@ -22,7 +22,9 @@ function LoginForm() {
             <RememberMe checked={form.remember} onChange={(val) => handleChange('remember', val)} label="Beni Hatırla" />
             <Button label="Giriş Yap" className="w-full " severity="success"/>
             <p className="text-white text-sm text-center"> 
-              Hesabınız yok mu?{' '} <a href="#" className="hover:underline">Kayıt ol</a></p>
+              Hesabınız yok mu?{' '} <button type="button" onClick={onSwitchToRegister} style={{all: 'unset', color: 'gray', cursor: 'pointer', textDecoration: 'underline'}}>
+          Kayıt Ol
+        </button></p>
         </form>
         </div>
      );
